@@ -8,10 +8,10 @@ import imgDev from '../assets/1-dark.png';
 
 export const Home = () => {
   return (
-    <Card sx={{ display:'flex', maxWidth: '80%',marginTop: 5 }}>
+    <Card sx={{ display:'flex', maxWidth: '80vw',marginTop: 5, height: '60vh' }}>
     <CardMedia
       component='img'
-      sx={{ width: 400 }}
+      sx={{ width: '30vw' }}
       image={imgDev}
       alt="developer illustration"
     />

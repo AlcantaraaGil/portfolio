@@ -18,6 +18,9 @@ export const MenuTab = ({ activeSection }) => {
       case 'about':
         elementId = 'about-section';
         break;
+      case 'projects':
+        elementId = 'projects-section';
+        break;
       default:
         elementId = '';
     }
@@ -31,6 +34,7 @@ export const MenuTab = ({ activeSection }) => {
     }
   };
 
+  // Sincronizar el valor de la pestaña con la sección activa al cambiar activeSection
   React.useEffect(() => {
     setValue(activeSection);
   }, [activeSection]);
@@ -46,7 +50,7 @@ export const MenuTab = ({ activeSection }) => {
       >
         <Tab value="home" label="home" />
         <Tab value="about" label="about me" />
-        <Tab value="portfolio" label="projects" />
+        <Tab value="projects" label="projects" />
       </Tabs>
     </Box>
   );

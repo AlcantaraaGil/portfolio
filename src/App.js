@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { MenuTab } from './Components/MenuTab';
 import { Home } from './Components/Home';
 import { About } from './Components/About';
+import { Projects } from './Components/Projects';
 
 const darkTheme = createTheme({
   palette: {
@@ -16,17 +17,22 @@ const darkTheme = createTheme({
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
   const [activeSection, setActiveSection] = useState('home');
 
   const handleScroll = () => {
-    // const homeTop = homeRef.current?.offsetTop;
-    const aboutTop = aboutRef.current?.offsetTop;
-    const scrollPosition = window.scrollY + window.innerHeight / 2; 
+    // const homeTop = homeRef.current?.offsetTop || 0;
+    const aboutTop = aboutRef.current?.offsetTop || 0;
+    const projectsTop = projectsRef.current?.offsetTop || 0;
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
 
+    // Determinar qué sección está en la vista actual
     if (scrollPosition < aboutTop) {
       setActiveSection('home');
-    } else {
+    } else if (scrollPosition < projectsTop) {
       setActiveSection('about');
+    } else {
+      setActiveSection('projects');
     }
   };
 
@@ -49,6 +55,9 @@ function App() {
         </main>
         <section className='about-me' ref={aboutRef} id="about-section">
           <About />
+        </section>
+        <section className='projects-container' ref={projectsRef} id="projects-section">
+          <Projects />
         </section>
       </div>
     </ThemeProvider>

@@ -6,13 +6,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   padding: 50px;
 }
 
 .about-me{
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
+  align-content: center;
+}
+.about-me a{
+  text-decoration: none;
 }
 .nav-menu {
   position: fixed; /* Fija el nav en la parte superior */
@@ -26,4 +31,30 @@
 /* Ajusta el contenido principal para no quedar oculto detrás del nav */
 .main-content, .about-me {
   padding-top: 60px; /* Ajusta este valor según la altura del nav */
+}
+.highlighted{
+  color: #ffb74d;
+}
+.highlighted-blue{
+  color: #29b6f6;
+}
+.about-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-container{
+  padding: 100px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projects-container button{
+  height: 100%;
+}
+.projects-container a{
+  text-decoration: none;
+  color: white;
 }
